@@ -1,0 +1,12 @@
+body{
+    background-color: #FFC5D3;
+}
+
+.intro {
+    background-color: red;
+    font-family: 'Neo Tech';
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}
