@@ -1,6 +1,7 @@
 let num1
 let num2
 let operator
+let displayText
 
 function add(a,b){
     return a + b
@@ -40,6 +41,12 @@ const btn7 = document.querySelector("#seven")
 const btn8 = document.querySelector("#eight")
 const btn9 = document.querySelector("#nine")
 const btn0 = document.querySelector("#zero")
+const btnReset = document.querySelector("#reset")
+const btnEqual = document.querySelector("#equal")
+const btnPlus = document.querySelector("#plus")
+const btnMinus = document.querySelector("#minus")
+const btnMultiply = document.querySelector("#multiply")
+const btnDivide = document.querySelector("#divide")
 
 const display = document.getElementById("display")
 
@@ -82,3 +89,22 @@ btn9.addEventListener("click", function(){
 btn0.addEventListener("click", function(){
     display.textContent += "0"
 })
+
+btnReset.addEventListener("click", function(){
+    display.textContent = ""
+    num1 = ""
+    num2 = ""
+})
+
+btnEqual.addEventListener("click", function(){
+    operator = "+"
+    display.textContent = operate(num1,num2,operator)
+})
+
+function getNum1(){
+    num1 = parseInt(display.textContent)
+}
+
+function getNum2(){
+    num2 = parseInt(display.textContent)
+}
