@@ -4,3 +4,4 @@ Creating an online calculator function
 2. Followed up with a function that calls the respective operations by identifying the operator
 3. Creating the HTML and CSS of the calculator
 4. Creating the buttons to log numbers users require
+5. Created function where a button pressed will be logged on to the display
