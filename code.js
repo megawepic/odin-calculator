@@ -1,6 +1,6 @@
 let num1
 let num2
-let operator
+let operator = ""
 let displayText
 
 function add(a,b){
@@ -49,6 +49,7 @@ const btnMultiply = document.querySelector("#multiply")
 const btnDivide = document.querySelector("#divide")
 
 const display = document.getElementById("display")
+const topDisplay = document.getElementById("topDisplay")
 
 btn1.addEventListener("click", function(){
     display.textContent += "1"
@@ -92,19 +93,84 @@ btn0.addEventListener("click", function(){
 
 btnReset.addEventListener("click", function(){
     display.textContent = ""
+    topDisplay.textContent = ""
     num1 = ""
     num2 = ""
+    operator = ""
+})
+
+btnPlus.addEventListener("click", function(){
+    if (operator == "" || operator =="="){
+        operator = "+"
+        getNum1()
+        topDisplay.textContent = display.textContent
+        display.textContent = ""
+    } else {
+        getNum2()
+        topDisplay.textContent = operate(num1,num2,operator)
+        display.textContent = ""
+        operator = "+"
+        num1 = Number(topDisplay.textContent)
+    }
+})
+
+btnMinus.addEventListener("click", function(){
+    if (operator == "" || operator =="="){
+        operator = "-"
+        getNum1()
+        topDisplay.textContent = display.textContent
+        display.textContent = ""
+    } else {
+        getNum2()
+        topDisplay.textContent = operate(num1,num2,operator)
+        display.textContent = ""
+        operator = "-"
+        num1 = Number(topDisplay.textContent)
+    }
+})
+
+btnDivide.addEventListener("click", function(){
+    if (operator == "" || operator =="="){
+        operator = "/"
+        getNum1()
+        topDisplay.textContent = display.textContent
+        display.textContent = ""
+    } else {
+        getNum2()
+        topDisplay.textContent = operate(num1,num2,operator)
+        display.textContent = ""
+        operator = "/"
+        num1 = Number(topDisplay.textContent)
+    }    
+})
+
+btnMultiply.addEventListener("click", function(){
+    if (operator == "" || operator =="="){
+        operator = "*"
+        getNum1()
+        topDisplay.textContent = display.textContent
+        display.textContent = ""
+    } else {
+        getNum2()
+        topDisplay.textContent = operate(num1,num2,operator)
+        display.textContent = ""
+        operator = "*"
+        num1 = Number(topDisplay.textContent)
+    }   
 })
 
 btnEqual.addEventListener("click", function(){
-    operator = "+"
+    getNum2()
     display.textContent = operate(num1,num2,operator)
+    topDisplay.textContent = ""
+    operator = "="
+    num1 = Number(display.textContent)
 })
 
 function getNum1(){
-    num1 = parseInt(display.textContent)
+    num1 = Number(display.textContent)
 }
 
 function getNum2(){
-    num2 = parseInt(display.textContent)
+    num2 = Number(display.textContent)
 }
