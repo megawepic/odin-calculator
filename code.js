@@ -52,52 +52,76 @@ const display = document.getElementById("display")
 const topDisplay = document.getElementById("topDisplay")
 
 btn1.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "1"
 })
 
 btn2.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "2"
 })
 
 btn3.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "3"
 })
 
 btn4.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "4"
 })
 
 btn5.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "5"
 })
 
 btn6.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "6"
 })
 
 btn7.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "7"
 })
 
 btn8.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "8"
 })
 
 btn9.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "9"
 })
 
 btn0.addEventListener("click", function(){
+    if(operator == "="){
+        reset()
+    }
     display.textContent += "0"
 })
 
-btnReset.addEventListener("click", function(){
-    display.textContent = ""
-    topDisplay.textContent = ""
-    num1 = ""
-    num2 = ""
-    operator = ""
-})
+btnReset.addEventListener("click", reset);
 
 btnPlus.addEventListener("click", function(){
     if (operator == "" || operator =="="){
@@ -141,7 +165,7 @@ btnDivide.addEventListener("click", function(){
         display.textContent = ""
         operator = "/"
         num1 = Number(topDisplay.textContent)
-    }    
+    }
 })
 
 btnMultiply.addEventListener("click", function(){
@@ -173,4 +197,12 @@ function getNum1(){
 
 function getNum2(){
     num2 = Number(display.textContent)
+}
+
+function reset(){
+    display.textContent = ""
+    topDisplay.textContent = ""
+    num1 = ""
+    num2 = ""
+    operator = ""
 }
