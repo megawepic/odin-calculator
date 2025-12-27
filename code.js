@@ -47,6 +47,7 @@ const btnPlus = document.querySelector("#plus")
 const btnMinus = document.querySelector("#minus")
 const btnMultiply = document.querySelector("#multiply")
 const btnDivide = document.querySelector("#divide")
+const btnBackspace = document.querySelector("#backspace")
 
 const display = document.getElementById("display")
 const topDisplay = document.getElementById("topDisplay")
@@ -55,12 +56,20 @@ btn1.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+    if (display.textContent == "0"){
+        display.textContent = "1"
+        return
+    }
     display.textContent += "1"
 })
 
 btn2.addEventListener("click", function(){
     if(operator == "="){
         reset()
+    }
+    if (display.textContent == "0"){
+        display.textContent = "2"
+        return
     }
     display.textContent += "2"
 })
@@ -69,12 +78,20 @@ btn3.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+    if (display.textContent == "0"){
+        display.textContent = "3"
+        return
+    }
     display.textContent += "3"
 })
 
 btn4.addEventListener("click", function(){
     if(operator == "="){
         reset()
+    }
+    if (display.textContent == "0"){
+        display.textContent = "4"
+        return
     }
     display.textContent += "4"
 })
@@ -83,12 +100,20 @@ btn5.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+    if (display.textContent == "0"){
+        display.textContent = "5"
+        return
+    }
     display.textContent += "5"
 })
 
 btn6.addEventListener("click", function(){
     if(operator == "="){
         reset()
+    }
+    if (display.textContent == "0"){
+        display.textContent = "6"
+        return
     }
     display.textContent += "6"
 })
@@ -97,12 +122,20 @@ btn7.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+    if (display.textContent == "0"){
+        display.textContent = "7"
+        return
+    }
     display.textContent += "7"
 })
 
 btn8.addEventListener("click", function(){
     if(operator == "="){
         reset()
+    }
+    if (display.textContent == "0"){
+        display.textContent = "8"
+        return
     }
     display.textContent += "8"
 })
@@ -111,6 +144,10 @@ btn9.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+    if (display.textContent == "0"){
+        display.textContent = "9"
+        return
+    }
     display.textContent += "9"
 })
 
@@ -118,6 +155,11 @@ btn0.addEventListener("click", function(){
     if(operator == "="){
         reset()
     }
+
+    if (display.textContent == "0") {
+        return;
+    }
+    
     display.textContent += "0"
 })
 
@@ -180,7 +222,7 @@ btnMultiply.addEventListener("click", function(){
         display.textContent = ""
         operator = "*"
         num1 = Number(topDisplay.textContent)
-    }   
+    }
 })
 
 btnEqual.addEventListener("click", function(){
@@ -189,6 +231,14 @@ btnEqual.addEventListener("click", function(){
     topDisplay.textContent = ""
     operator = "="
     num1 = Number(display.textContent)
+})
+
+btnBackspace.addEventListener("click", function(){
+    display.textContent = display.textContent.slice(0,-1)
+
+    if (display.textContent == "") {
+        display.textContent = "0";
+    }
 })
 
 function getNum1(){
