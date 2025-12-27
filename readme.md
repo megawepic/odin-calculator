@@ -1,7 +1,5 @@
 Creating an online calculator function
 
-1. Started off creating the functions of add/subtract/multiply/divide in Javascript
-2. Followed up with a function that calls the respective operations by identifying the operator
-3. Creating the HTML and CSS of the calculator
-4. Creating the buttons to log numbers users require
-5. Created function where a button pressed will be logged on to the display
+Created a calculator app by introducing functions that will log buttons onto the display when clicked
+Created functions to read calculate the operations when clicked
+Styled the calculator to make it look more presentable

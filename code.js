@@ -48,6 +48,7 @@ const btnMinus = document.querySelector("#minus")
 const btnMultiply = document.querySelector("#multiply")
 const btnDivide = document.querySelector("#divide")
 const btnBackspace = document.querySelector("#backspace")
+const btnDecimal = document.querySelector("#decimal")
 
 const display = document.getElementById("display")
 const topDisplay = document.getElementById("topDisplay")
@@ -226,6 +227,11 @@ btnMultiply.addEventListener("click", function(){
 })
 
 btnEqual.addEventListener("click", function(){
+
+    if (operator == ""){
+        return
+    }
+    
     getNum2()
     display.textContent = operate(num1,num2,operator)
     topDisplay.textContent = ""
@@ -235,9 +241,13 @@ btnEqual.addEventListener("click", function(){
 
 btnBackspace.addEventListener("click", function(){
     display.textContent = display.textContent.slice(0,-1)
+})
 
-    if (display.textContent == "") {
-        display.textContent = "0";
+btnDecimal.addEventListener("click", function() {
+    if (display.textContent.includes(".")){
+        return
+    } else {
+        display.textContent += "."
     }
 })
 
